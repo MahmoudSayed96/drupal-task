@@ -1,0 +1,12 @@
+<div class="latest-content-items-block">
+	<ul>
+		{% for item in items %}
+			{% for row in item['#items'] %}
+				<li>
+					<strong>{{ row.title }}</strong><br>
+					<small>{{ row.date }}</small>
+				</li>
+			{% endfor %}
+		{% endfor %}
+	</ul>
+</div>

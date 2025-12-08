@@ -11,9 +11,18 @@ use Drupal\user\UserInterface;
 /**
  * Implements hook_theme().
  */
-function custom_content_tools_theme(): array {
+function custom_content_tools_theme(): array
+{
   return [
-    'content_item' => ['render element' => 'elements'],
+    'content_item' => [
+      'render element' => 'elements'
+    ],
+    'latest_content_items_block' => [
+      'variables' => [
+        'items' => [],
+      ],
+      'template' => 'latest-content-items-block',
+    ],
   ];
 }
 
@@ -28,17 +37,29 @@ function custom_content_tools_theme(): array {
  *     fields attached to the entity.
  *   - attributes: HTML attributes for the containing element.
  */
-function template_preprocess_content_item(array &$variables): void {
+function template_preprocess_content_item(array &$variables): void
+{
+  /** @var Drupal\custom_content_tools\Entity\ContentItem  created_time*/
+  $current_item = $variables['elements']['#content_item'];
   $variables['view_mode'] = $variables['elements']['#view_mode'];
   foreach (Element::children($variables['elements']) as $key) {
     $variables['content'][$key] = $variables['elements'][$key];
+  }
+
+  // Add a "New" badge for items from the last 7 days
+  $created_time = $current_item->get('created')->value;
+  if ($created_time <= 7 * 24 * 60 * 60) {
+    $variables['is_new'] = TRUE;
+  } else {
+    $variables['is_new'] = FALSE;
   }
 }
 
 /**
  * Implements hook_user_cancel().
  */
-function custom_content_tools_user_cancel($edit, UserInterface $account, $method): void {
+function custom_content_tools_user_cancel($edit, UserInterface $account, $method): void
+{
   switch ($method) {
     case 'user_cancel_block_unpublish':
       // Unpublish content items.
@@ -70,7 +91,8 @@ function custom_content_tools_user_cancel($edit, UserInterface $account, $method
 /**
  * Implements hook_ENTITY_TYPE_predelete() for user entities.
  */
-function custom_content_tools_user_predelete(UserInterface $account): void {
+function custom_content_tools_user_predelete(UserInterface $account): void
+{
   // Delete content items that belong to this account.
   $storage = \Drupal::entityTypeManager()->getStorage('content_item');
   $content_item_ids = $storage->getQuery()

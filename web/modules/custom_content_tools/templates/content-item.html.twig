@@ -13,12 +13,15 @@
  * @see template_preprocess_content_item()
  */
 #}
-<article{{ attributes }}>
-  {% if view_mode != 'full' %}
-    {{ title_prefix }}
-    {{ title_suffix }}
-  {% endif %}
-  {% if content %}
-    {{- content -}}
-  {% endif %}
+<article{{attributes}}>
+	{% if view_mode != 'full' %}
+		{{ title_prefix }}
+		{{ title_suffix }}
+	{% endif %}
+	{% if content %}
+		{% if is_new %}
+			<span class="badge badge-new">{{'NEW'|t}}</span>
+		{% endif %}
+		{{- content -}}
+	{% endif %}
 </article>
