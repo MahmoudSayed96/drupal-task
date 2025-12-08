@@ -99,6 +99,12 @@ vendor/bin/drush cr
 vendor/bin/drush rs
 ```
 
+9. For one-time login link as admin or use credentails (admin/P@ssw0rd)
+
+```bash
+vendor/bin/drush uli
+```
+
 ## Author
 
 Copyrights &copy; [Mahmoud Sayed](https://github.com/MahmoudSayed96). All rights reserved
