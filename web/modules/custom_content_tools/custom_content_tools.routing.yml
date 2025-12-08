@@ -1,0 +1,7 @@
+entity.content_item.settings:
+  path: 'admin/structure/content-item'
+  defaults:
+    _form: '\Drupal\custom_content_tools\Form\ContentItemSettingsForm'
+    _title: 'Content Item'
+  requirements:
+    _permission: 'administer content_item'

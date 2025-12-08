@@ -1,0 +1,13 @@
+uuid: 211b3fa5-4834-4363-b2d0-721e6ecd178c
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_content_tools
+_core:
+  default_config_hash: Xo9Y5g1BZz4ELaGYwprq54qy4l7dnazopER_b7ubOBA
+id: content_item_delete_action
+label: 'Delete content items'
+type: content_item
+plugin: 'entity:delete_action:content_item'
+configuration: {  }

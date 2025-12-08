@@ -1,0 +1,17 @@
+administer content_item:
+  title: 'Administer content items'
+  restrict access: true
+view content_item:
+  title: 'View content item'
+edit content_item:
+  title: 'Edit content item'
+delete content_item:
+  title: 'Delete content item'
+create content_item:
+  title: 'Create content item'
+view content_item revision:
+  title: 'View content item revision'
+revert content_item revision:
+  title: 'Revert content item revision'
+delete content_item revision:
+  title: 'Delete content item revision'

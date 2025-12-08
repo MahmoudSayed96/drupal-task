@@ -1,0 +1,7 @@
+block.settings.latest_content_items:
+  type: block_settings
+  label: 'Latest Content Items block'
+  mapping:
+    example:
+      type: string
+      label: Example

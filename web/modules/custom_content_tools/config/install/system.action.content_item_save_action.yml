@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_content_tools
+id: content_item_save_action
+label: 'Save content items'
+type: content_item
+plugin: entity:save_action:content_item
+configuration: {  }

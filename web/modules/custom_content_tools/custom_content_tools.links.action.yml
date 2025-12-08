@@ -1,0 +1,5 @@
+content_item.add_form:
+  title: 'Add content item'
+  route_name: entity.content_item.add_form
+  appears_on:
+    - entity.content_item.collection

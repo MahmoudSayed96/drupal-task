@@ -1,0 +1,13 @@
+uuid: 2d11ed37-4a03-4b2d-9c30-bb75126d7457
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_content_tools
+_core:
+  default_config_hash: NAjwvAExzzt1Yx69ZjUIDu7wS_dHXg4gi46n8DEXCaE
+id: content_item_save_action
+label: 'Save content items'
+type: content_item
+plugin: 'entity:save_action:content_item'
+configuration: {  }

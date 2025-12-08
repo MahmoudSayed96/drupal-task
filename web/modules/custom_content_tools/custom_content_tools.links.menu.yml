@@ -1,0 +1,11 @@
+entity.content_item.settings:
+  title: 'Content Item'
+  description: 'Configure a Content Item entity type.'
+  route_name:  entity.content_item.settings
+  parent: system.admin_structure
+
+entity.content_item.collection:
+  title: 'Content Items'
+  description: 'List of content items.'
+  route_name: entity.content_item.collection
+  parent: system.admin_content

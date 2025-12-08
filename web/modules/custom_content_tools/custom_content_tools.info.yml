@@ -1,0 +1,5 @@
+name: 'custom_content_tools'
+type: module
+description: 'Custom module for handling content item type'
+package: Custom
+core_version_requirement: ^10 || ^11

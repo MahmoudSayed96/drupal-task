@@ -1,0 +1,22 @@
+entity.content_item.settings:
+  title: 'Settings'
+  route_name: entity.content_item.settings
+  base_route: entity.content_item.settings
+entity.content_item.view:
+  title: 'View'
+  route_name: entity.content_item.canonical
+  base_route: entity.content_item.canonical
+entity.content_item.edit_form:
+  title: 'Edit'
+  route_name: entity.content_item.edit_form
+  base_route: entity.content_item.canonical
+entity.content_item.delete_form:
+  title: 'Delete'
+  route_name: entity.content_item.delete_form
+  base_route: entity.content_item.canonical
+  weight: 10
+entity.content_item.collection:
+  title: 'Content Items'
+  route_name: entity.content_item.collection
+  base_route: system.admin_content
+  weight: 10
