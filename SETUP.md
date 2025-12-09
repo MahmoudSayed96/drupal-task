@@ -37,8 +37,12 @@ This steps requires to install project on your local machine.
     SHOW DATABASES;
 
    ```
+   Import database sql file
+   ```bash
+    mysql -u USER_NAME -p drupal_task < "path/to/drupal_task.sql"
+   ```
 
-3. Open project in your IDE
+4. Open project in your IDE
 
    - Set project on development mode by this way.
 
@@ -69,7 +73,7 @@ This steps requires to install project on your local machine.
        $settings['trusted_host_patterns'] = ['YOUR_LOCAL_DOMAIN'];
        ```
 
-4. Install all dependencies and packages using composer.
+5. Install all dependencies and packages using composer.
 
 ```bash
 composer install
