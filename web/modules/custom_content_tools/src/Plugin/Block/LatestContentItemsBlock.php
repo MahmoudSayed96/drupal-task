@@ -124,7 +124,7 @@ final class LatestContentItemsBlock extends BlockBase implements ContainerFactor
       '#cache' => [
         'tags' => ['node_list', 'content_item_list', !empty($entities) ? $entities[0]->getCacheTags() : ''],
         'contexts' => ['url.path', 'user.roles'],
-        'max-age' => 3600,
+        'max-age' => 3600, // 1 hour
       ],
     ];
   }
